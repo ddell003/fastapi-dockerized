@@ -43,7 +43,7 @@ EXPOSE 5000
 WORKDIR /opt
 
 COPY ./api ./api
-COPY ./static ./static
+#COPY ./static ./static
 COPY ./data ./data
 COPY ./alembic ./alembic
 COPY ./alembic.ini ./alembic.ini

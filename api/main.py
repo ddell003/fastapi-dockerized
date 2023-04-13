@@ -33,10 +33,4 @@ router.include_router(UsersRouter)
 router.include_router(RolesRouter)
 
 
-app.mount(
-    f"{config.api_prefix}/static",
-    StaticFiles(directory=f"{get_project_absolute_path()}/static"),
-    name="static",
-)
-
 app.include_router(router)
