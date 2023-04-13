@@ -1,0 +1,11 @@
+-r requirements.txt
+flake8
+pytest
+pytest-cov
+black
+requests
+PyYAML
+pydantic
+sqlalchemy_utils
+pre-commit
+fastapi
