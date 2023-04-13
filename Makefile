@@ -47,7 +47,7 @@ db.upgrade:
     -e DB_NAME=postgres \
     -e DB_USERNAME=postgres \
     -e DB_PASSWORD=postgres \
-		fastapi-starter_api \
+		dockerized-fastapi-api  \
 		alembic upgrade head
 
 db.downgrade:
@@ -60,7 +60,7 @@ db.downgrade:
     -e DB_NAME=postgres \
     -e DB_USERNAME=postgres \
     -e DB_PASSWORD=postgres \
-		fastapi-starter_api \
+		dockerized-fastapi-api  \
 		alembic downgrade base
 
 db.current:
@@ -72,7 +72,7 @@ db.current:
     -e DB_NAME=postgres \
     -e DB_USERNAME=postgres \
     -e DB_PASSWORD=postgres \
-		fastapi-starter_api \
+		dockerized-fastapi-api  \
 		alembic current
 
 db.upgrade.test:
@@ -86,5 +86,5 @@ db.upgrade.test:
     -e DB_NAME=postgres \
     -e DB_USERNAME=postgres \
     -e DB_PASSWORD=postgres \
-		fastapi-starter_api \
+		dockerized-fastapi-api  \
 		alembic upgrade head
