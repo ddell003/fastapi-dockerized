@@ -12,7 +12,7 @@ class RoleBaseSchema(BaseModel):
 class RoleSchema(RoleBaseSchema):
     """Represents a Sprint object which will be returned to the UI"""
 
-    id: int
+    id: str
     user_count: Optional[int] = None
 
     class Config:

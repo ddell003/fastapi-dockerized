@@ -9,14 +9,14 @@ services:
     volumes:
       - ./api:/opt/api # map the code so we can take advantage of uvicorn's --reload
     environment:
-      - DB_HOST=db
-      - DB_PORT=5432
-      - DB_NAME=postgres
-      - DB_USERNAME=postgres
-      - DB_PASSWORD=postgres
+      - DB_HOST=${DB_HOST:?err}
+      - DB_PORT=${DB_PORT:?err}
+      - DB_NAME=${DB_NAME:?err}
+      - DB_USERNAME=${DB_USERNAME:?err}
+      - DB_PASSWORD=${DB_PASSWORD:?err}
       - POSTGRES_SCHEMA=public
-      - ALLOWED_ORIGIN=http://localhost:3000
-      - INIT_DATA_PATH=/opt/data
+      - ALLOWED_ORIGIN=${ALLOWED_ORIGIN:?err}
+      - INIT_DATA_PATH=${INIT_DATA_PATH:?err}
     ports:
       - "5000:5000"
     networks:
@@ -24,10 +24,10 @@ services:
   db:
     container_name: db
     hostname: db
-    image: postgres:13-alpine
+    image: postgres:14-alpine
     environment:
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?err}
+      - POSTGRES_USER=${POSTGRES_USER:?err}
     networks:
       - api
     ports:
@@ -46,10 +46,10 @@ services:
     ports:
       - 5050:5050
     environment:
-      - PGADMIN_DEFAULT_EMAIL=admin
-      - PGADMIN_DEFAULT_PASSWORD=admin
-      - PGADMIN_LISTEN_ADDRESS=pgadmin
-      - PGADMIN_LISTEN_PORT=5050
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL:?err}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD:?err}
+      - PGADMIN_LISTEN_ADDRESS=${PGADMIN_LISTEN_ADDRESS:?err}
+      - PGADMIN_LISTEN_PORT=${PGADMIN_LISTEN_PORT:?err}
       - PGADMIN_SERVER_JSON_FILE=/tmp/pgadmin4-servers.json
     networks:
       - api

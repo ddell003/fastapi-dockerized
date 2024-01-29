@@ -1,12 +1,14 @@
 from sqlalchemy.orm import Session
 
-from ..dependencies.query_params import UserQueryParams
-from ..models.models import User, Role
-from ..schemas.user import UserCreateSchema
+from api.dependencies.query_params import UserQueryParams
+from api.models.enums import UserType
+from api.models.models import User, Role
+from api.schemas.user import UserCreateSchema
 
 
 def create_user(db: Session, user_data: UserCreateSchema):
     # should bcrypt password here
+
     new_user = User(**user_data.dict())
     db.add(new_user)
     db.commit()

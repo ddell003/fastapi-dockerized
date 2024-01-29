@@ -3,131 +3,300 @@
     {
       "first_name": "John",
       "last_name": "Doe",
-      "email": "johndoe@test.com",
       "username": "johndoe@test.com",
       "password": "testtest",
-      "active": true,
       "roles": [
         {"name": "admin"},
         {"name": "super_admin"},
         {"name": "developer"}
+      ],
+      "address": {
+        "street_1": "street 1",
+        "city": "city",
+        "zip": "24477",
+        "state": "VA",
+        "country_code": "US"
+      },
+      "emails": [
+        {"email": "test@gmail.com", "primary":false},
+        {"email": "johndoe@test.com", "primary":true}
+      ],
+      "fax_numbers": [
+          {"fax_number": "14442552323", "primary":false},
+          {"fax_number": "14442552323", "primary":true}
+      ],
+      "phone_numbers": [
+          {"phone_number": "14435433434", "primary":false},
+          {"phone_number": "14435433434", "primary":true}
       ]
     },
     {
       "first_name": "Bob",
       "last_name": "Smith",
-      "email": "bobsmith@test.com",
       "username": "bobsmith@test.com",
       "password": "testtest",
-      "active": true,
       "roles": [
         {"name": "accountant"},
         {"name": "office"},
         {"name": "manager"}
+      ],
+      "address": {
+        "street_1": "street 1",
+        "city": "city",
+        "zip": "24477",
+        "state": "VA",
+        "country_code": "US"
+      },
+      "emails": [
+        {"email": "bobsmith@test.com", "primary":false},
+        {"email": "johndoe@test.com", "primary":true}
+      ],
+      "fax_numbers": [
+          {"fax_number": "14442552323", "primary":false},
+          {"fax_number": "14442552323", "primary":true}
+      ],
+      "phone_numbers": [
+          {"phone_number": "14435433434", "primary":false},
+          {"phone_number": "14435433434", "primary":true}
       ]
     },
     {
       "first_name": "Danny",
       "last_name": "Hue",
-      "email": "dannyhue@test.com",
       "username": "dannyhue@test.com",
       "password": "testtest",
-      "active": true,
       "roles": [
         {"name": "accountant"},
         {"name": "office"},
         {"name": "employee"}
+      ],
+      "address": {
+        "street_1": "street 1",
+        "city": "city",
+        "zip": "24477",
+        "state": "VA",
+        "country_code": "US"
+      },
+      "emails": [
+        {"email": "dannyhue@test.com", "primary":false},
+        {"email": "johndoe@test.com", "primary":true}
+      ],
+      "fax_numbers": [
+          {"fax_number": "14442552323", "primary":false},
+          {"fax_number": "14442552323", "primary":true}
+      ],
+      "phone_numbers": [
+          {"phone_number": "14435433434", "primary":false},
+          {"phone_number": "14435433434", "primary":true}
       ]
     },
     {
       "first_name": "Zach",
       "last_name": "Davis",
-      "email": "zachdavis@test.com",
       "username": "zachdavis@test.com",
       "password": "testtest",
-      "active": true,
       "roles": [
         {"name": "admin"},
         {"name": "office"},
         {"name": "tester"}
+      ],
+      "address": {
+        "street_1": "street 1",
+        "city": "city",
+        "zip": "24477",
+        "state": "VA",
+        "country_code": "US"
+      },"emails": [
+        {"email": "zachdavis@test.com", "primary":false},
+        {"email": "johndoe@test.com", "primary":true}
+      ],
+      "fax_numbers": [
+          {"fax_number": "14442552323", "primary":false},
+          {"fax_number": "14442552323", "primary":true}
+      ],
+      "phone_numbers": [
+          {"phone_number": "14435433434", "primary":false},
+          {"phone_number": "14435433434", "primary":true}
       ]
     },
     {
       "first_name": "Alice",
       "last_name": "Cliff",
-      "email": "alicecliff@test.com",
       "username": "alicecliff@test.com",
       "password": "testtest",
-      "active": true,
       "roles": [
         {"name": "developer"},
         {"name": "office"},
         {"name": "manager"}
+      ],
+      "address": {
+        "street_1": "street 1",
+        "city": "city",
+        "zip": "24477",
+        "state": "VA",
+        "country_code": "US"
+      },
+      "emails": [
+        {"email": "alicecliff@test.com", "primary":false},
+        {"email": "johndoe@test.com", "primary":true}
+      ],
+      "fax_numbers": [
+          {"fax_number": "14442552323", "primary":false},
+          {"fax_number": "14442552323", "primary":true}
+      ],
+      "phone_numbers": [
+          {"phone_number": "14435433434", "primary":false},
+          {"phone_number": "14435433434", "primary":true}
       ]
     },
     {
       "first_name": "Greg",
       "last_name": "Cooper",
-      "email": "gregcooper@test.com",
       "username": "gregcooper@test.com",
       "password": "testtest",
-      "active": true,
       "roles": [
         {"name": "shipping"},
         {"name": "employee"},
         {"name": "manager"}
+      ],
+      "address": {
+        "street_1": "street 1",
+        "city": "city",
+        "zip": "24477",
+        "state": "VA",
+        "country_code": "US"
+      },
+      "emails": [
+        {"email": "gregcooper@test.com", "primary":false},
+        {"email": "johndoe@test.com", "primary":true}
+      ],
+      "fax_numbers": [
+          {"fax_number": "14442552323", "primary":false},
+          {"fax_number": "14442552323", "primary":true}
+      ],
+      "phone_numbers": [
+          {"phone_number": "14435433434", "primary":false},
+          {"phone_number": "14435433434", "primary":true}
       ]
     },
      {
       "first_name": "Joy",
       "last_name": "Carol",
-      "email": "joycarol@test.com",
       "username": "joycarol@test.com",
       "password": "testtest",
-      "active": true,
       "roles": [
         {"name": "employee"},
         {"name": "manager"},
         {"name": "office"}
+      ],
+       "address": {
+        "street_1": "street 1",
+        "city": "city",
+        "zip": "24477",
+        "state": "VA",
+        "country_code": "US"
+      },
+       "emails": [
+        {"email": "joycarol@test.com", "primary":false},
+        {"email": "johndoe@test.com", "primary":true}
+      ],
+      "fax_numbers": [
+          {"fax_number": "14442552323", "primary":false},
+          {"fax_number": "14442552323", "primary":true}
+      ],
+      "phone_numbers": [
+          {"phone_number": "14435433434", "primary":false},
+          {"phone_number": "14435433434", "primary":true}
       ]
     },
     {
       "first_name": "Terry",
       "last_name": "Hale",
-      "email": "terryhale@test.com",
       "username": "terryhale@test.com",
       "password": "testtest",
-      "active": true,
       "roles": [
         {"name": "developer"},
         {"name": "manager"},
         {"name": "office"}
+      ],
+      "address": {
+        "street_1": "street 1",
+        "city": "city",
+        "zip": "24477",
+        "state": "VA",
+        "country_code": "US"
+      },
+       "emails": [
+        {"email": "terryhale@test.com", "primary":false},
+        {"email": "johndoe@test.com", "primary":true}
+      ],
+      "fax_numbers": [
+          {"fax_number": "14442552323", "primary":false},
+          {"fax_number": "14442552323", "primary":true}
+      ],
+      "phone_numbers": [
+          {"phone_number": "14435433434", "primary":false},
+          {"phone_number": "14435433434", "primary":true}
       ]
     },
     {
       "first_name": "Amy",
       "last_name": "Nelson",
-      "email": "amynelson@test.com",
       "username": "amynelson@test.com",
       "password": "testtest",
-      "active": true,
       "roles": [
         {"name": "test"},
         {"name": "test2"},
         {"name": "office"}
+      ],
+      "address": {
+        "street_1": "street 1",
+        "city": "city",
+        "zip": "24477",
+        "state": "VA",
+        "country_code": "US"
+      },
+      "emails": [
+        {"email": "amynelson@test.com", "primary":false},
+        {"email": "johndoe@test.com", "primary":true}
+      ],
+      "fax_numbers": [
+          {"fax_number": "14442552323", "primary":false},
+          {"fax_number": "14442552323", "primary":true}
+      ],
+      "phone_numbers": [
+          {"phone_number": "14435433434", "primary":false},
+          {"phone_number": "14435433434", "primary":true}
       ]
     },
     {
       "first_name": "Holt",
       "last_name": "Chief",
-      "email": "holtchief@test.com",
       "username": "holtchief@test.com",
       "password": "testtest",
-      "active": true,
       "roles": [
         {"name": "test"},
         {"name": "test2"},
         {"name": "office"}
+      ],
+      "address": {
+        "street_1": "street 1",
+        "city": "city",
+        "zip": "24477",
+        "state": "VA",
+        "country_code": "US"
+      },
+       "emails": [
+        {"email": "holtchief@test.com", "primary":false},
+        {"email": "johndoe@test.com", "primary":true}
+      ],
+      "fax_numbers": [
+          {"fax_number": "14442552323", "primary":false},
+          {"fax_number": "14442552323", "primary":true}
+      ],
+      "phone_numbers": [
+          {"phone_number": "14435433434", "primary":false},
+          {"phone_number": "14435433434", "primary":true}
       ]
     }
   ]

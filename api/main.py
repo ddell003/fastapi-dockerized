@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from . import __version__
 from .config import config
-from .routers import UsersRouter, RolesRouter
+from .routers import UsersRouter, RolesRouter, DegreeRouter, SpecialtyRouter, NetworkRouter, InvestigatorRouter
 from .utils import get_project_absolute_path
 
 
@@ -31,6 +31,10 @@ router = APIRouter(prefix=config.api_prefix)
 # Add additional routes below
 router.include_router(UsersRouter)
 router.include_router(RolesRouter)
+router.include_router(DegreeRouter)
+router.include_router(SpecialtyRouter)
+router.include_router(NetworkRouter)
+router.include_router(InvestigatorRouter)
 
 
 app.include_router(router)

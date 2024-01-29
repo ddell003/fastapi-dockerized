@@ -1,5 +1,7 @@
 from typing import Optional, List
 from pydantic import BaseModel
+
+from api.models.enums import UserType
 from api.schemas.role import RoleSchema
 
 
@@ -8,17 +10,14 @@ class UserBaseSchema(BaseModel):
 
     first_name: str
     last_name: str
-    email: str
-    username: str
-    password: str
-    active: bool
-    # active_date: date
-    #  address: Optional[str]
+    middle_name: str
+    username: Optional[str]
+    password: Optional[str]
 
 
 class UserSchema(UserBaseSchema):
 
-    id: int
+    id: str
     roles: Optional[List[RoleSchema]] = []
 
     class Config:
@@ -26,6 +25,7 @@ class UserSchema(UserBaseSchema):
 
 
 class UserCreateSchema(UserBaseSchema):
+    type: Optional[UserType] = UserType.basic
     pass
 
 

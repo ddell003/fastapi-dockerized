@@ -19,7 +19,7 @@ dev.setup:
 	./scripts/dev-setup.sh
 
 dev.format:
-	black conda tests alembicsetup
+	black api tests alembicsetup
 
 dev.test:
 	pytest -v --cov api --cov-report term-missing
@@ -36,6 +36,11 @@ docs.html:
 # -------------------------
 # Alembic
 # -------------------------
+db.create:
+	docker exec -it db psql -U postgres -c "CREATE DATABASE sfa_db;"
+
+db.seed:
+	docker exec -it api_dev sh -c "python3 -m api.helpers.load_data"
 
 db.upgrade:
 	docker run --rm \
@@ -44,7 +49,7 @@ db.upgrade:
 		-v ${PWD}/api:/opt/api \
 		-e DB_HOST=db \
     -e DB_PORT=5432 \
-    -e DB_NAME=postgres \
+    -e DB_NAME=sfa_db \
     -e DB_USERNAME=postgres \
     -e DB_PASSWORD=postgres \
 		dockerized-fastapi-api  \
@@ -57,7 +62,7 @@ db.downgrade:
 		-v ${PWD}/api:/opt/api \
 		-e DB_HOST=db \
     -e DB_PORT=5432 \
-    -e DB_NAME=postgres \
+    -e DB_NAME=sfa_db \
     -e DB_USERNAME=postgres \
     -e DB_PASSWORD=postgres \
 		dockerized-fastapi-api  \

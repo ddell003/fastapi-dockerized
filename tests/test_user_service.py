@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from api.services import user as user_service
+from api.services.users import user_service as user_service
 from tests.conftest import engine
 
 

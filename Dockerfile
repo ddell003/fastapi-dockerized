@@ -1,5 +1,5 @@
 # Server build stage
-FROM python:3.9-alpine as builder
+FROM python:3.11-alpine as builder
 
 WORKDIR /app
 
@@ -18,7 +18,7 @@ COPY ./requirements.txt requirements.txt
 # we'll copy these over into the final image
 RUN pip install --no-cache-dir -r requirements.txt
 
-FROM python:3.9-alpine
+FROM python:3.11-alpine
 
 ENV DB_NAME=${DB_NAME:-api}
 ENV DB_HOST=${DB_HOST:-localhost}
@@ -35,7 +35,7 @@ RUN pip install uvicorn
 RUN apk add --no-cache libpq
 
 # copy the python dependencies
-COPY --from=builder /usr/local/lib/python3.9/site-packages/ /usr/local/lib/python3.9/site-packages/
+COPY --from=builder /usr/local/lib/python3.11/site-packages/ /usr/local/lib/python3.11/site-packages/
 COPY --from=builder /usr/local/bin/alembic /usr/local/bin/alembic
 
 EXPOSE 5000

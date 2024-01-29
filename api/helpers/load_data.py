@@ -1,11 +1,15 @@
 import json
+import os
 
+from alembic import context
 from sqlalchemy.orm import Session
 
+from api.config import config
+from api.db import SessionLocal
+from ..schemas.investigator_schema import InvestigatorCreateSchema
 from ..schemas.role import RoleCreateSchema
-from ..schemas.user import UserCreateSchema
 from ..services.role import create_role, connect_users
-from ..services.user import create_user
+from ..services.users import investigator_service
 
 
 def load_data_from_file(filepath: str, db: Session):
@@ -15,18 +19,12 @@ def load_data_from_file(filepath: str, db: Session):
         roles = {}
 
         for user in data["users"]:
-            # see if user exists, and create it if it doesent
-            user_id = None
-            user_id = create_user(
+
+            user["middle_name"] = ""
+            user_id = investigator_service.create(
                 db,
-                UserCreateSchema(
-                    first_name=user["first_name"],
-                    last_name=user["first_name"],
-                    email=user["email"],
-                    username=user["email"],
-                    active=user["active"],
-                    # password=bcrypt.hashpw(user["password"].encode('utf-8'), bcrypt.gensalt())
-                    password=user["password"],
+                InvestigatorCreateSchema(
+                    **user
                 ),
             ).id
 
@@ -46,3 +44,18 @@ def load_data_from_file(filepath: str, db: Session):
 
                 # connect users
                 connect_users(db, user_id=user_id, role_id=role_id)
+
+
+def run_seeder():
+    db = SessionLocal()
+
+    for file in sorted(os.listdir(config.init_data_path)):
+        filepath = os.path.join(config.init_data_path, file)
+        if filepath == "/opt/data/__pycache__":
+            continue
+        load_data_from_file(filepath, db)
+
+
+if __name__ == "__main__":
+    print("running loader")
+    run_seeder()

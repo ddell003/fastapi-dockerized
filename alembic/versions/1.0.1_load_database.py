@@ -27,20 +27,22 @@ def upgrade() -> None:
     # without this, we end up with multiple db connections across multiple migrations
     # and this causes some issues with transactions
 
-    db = Session(bind=context.get_bind())
-
-
-    for file in sorted(os.listdir(config.init_data_path)):
-        filepath = os.path.join(config.init_data_path, file)
-        if filepath == "/opt/data/__pycache__":
-            continue
-        load_data_from_file(filepath, db)
+    # db = Session(bind=context.get_bind())
+    #
+    #
+    # for file in sorted(os.listdir(config.init_data_path)):
+    #     filepath = os.path.join(config.init_data_path, file)
+    #     if filepath == "/opt/data/__pycache__":
+    #         continue
+    #     load_data_from_file(filepath, db)
+    return
 
 
 def downgrade() -> None:
     # Delete all the data from all the tables
-    db = Session(bind=context.get_bind())
-    db.query(user_role_table).delete()
-    db.query(User).delete()
-    db.query(Role).delete()
-    db.commit()
+    # db = Session(bind=context.get_bind())
+    # db.query(user_role_table).delete()
+    # db.query(User).delete()
+    # db.query(Role).delete()
+    # db.commit()
+    return

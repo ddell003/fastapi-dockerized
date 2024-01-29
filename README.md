@@ -7,7 +7,9 @@ We'll run all the python code through docker to make dependency installation/iso
 
 * Run `make dev.setup` - This will set up your local virtual environment and install dev dependencies.
 * Run `make up` - This will build and start up the docker container.
-* Run `make db.upgrade.test` - This will initiate the database and run the migrations and populate the database with test data
+* Run `make db.create` - This will create a new database for a new project.
+* Run `make db.upgrade` - This will initiate the database and run the migrations
+* Run `make db.seed` - This will populate the database with data
 * Service will be running at [http://localhost:5000](http://localhost:5000)
 * See the API docs at [http://localhost:5000/api](http://localhost:5000/api)
 * Pg Admin will be runing at [http://localhost:5050/](http://localhost:5050/) Pgadmin: user: admin, pass: admin. Postgres user: postgres, pass: postgres
